@@ -16,10 +16,9 @@ source("R/NCtools.R")
 ncDAG(d = 5, nedges = 7)
 ```
 
-and a CPDAG is obtained from
+and a negative control CPDAG is obtained from
 
 ```
-source("R/NCtools.R")
 ncCPDAG(d = 5, nedges = 7)
 ```
 
