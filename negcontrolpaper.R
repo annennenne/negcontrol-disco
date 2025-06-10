@@ -6,7 +6,7 @@ source("R/NCtools.R")
 source("R/misc.R")
 
 #################################################################################
-## Computations for Section 2 ###################################################
+## Computations for Section 2 (5 node DAG example) ##############################
 #################################################################################
 
 d <- 5
@@ -43,7 +43,7 @@ median(precs_adj)
 median(recs_adj)
 
 #################################################################################
-## Computations for Section 4 ###################################################
+## Computations for Section 4 (Adjacency precision and recall) ##################
 #################################################################################
 
 # Example: Expected precision and recall for a dense 5 node DAG skeleton ########
@@ -80,7 +80,7 @@ ggplot(d5f1res, aes(x = m_est, y = adj_f1, group = m_true,
 ggsave(filename = "figures/d5anres-f1.pdf", height = 4, width = 6)
 
 #################################################################################
-## Computations for Section 5 ###################################################
+## Computations for Section 5 (Metropolit application) ##########################
 #################################################################################
 
 # Metropolit application confuson matrix
@@ -90,7 +90,7 @@ metro_conf <- list(tp = 10, fp = 20, fn = 20, tn = 181)
 skelfit.test(metro_conf)
 
 #################################################################################
-## Computations for Section 6.1 #################################################
+## Computations for Section 6.1 (PC evaluation) #################################
 #################################################################################
 
 allres_pc_mtrue30 <- data.frame(mtrue = 30,
@@ -337,7 +337,7 @@ print(xtable(res_6.1_mtrue15), include.rownames = FALSE,
 
 
 #################################################################################
-## Computations for Section 6.2 #################################################
+## Computations for Section 6.2 (Sachs application) #############################
 #################################################################################
 
 # Import ground truth graph
