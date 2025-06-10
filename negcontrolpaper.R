@@ -165,6 +165,10 @@ for (i in 1:1000) {
   
 }
 
+# Range and mean of nedges
+range(allres_nc_mtrue30$nedges)
+mean(allres_nc_mtrue30$nedges)
+
 # Organize results and export for Latex table
 res_6.1_mtrue30 <- data.frame(
   metric = c("SHD", 
@@ -276,6 +280,9 @@ for (i in 1:1000) {
   
 }
 
+# Range and mean of nedges
+range(allres_nc_mtrue15$nedges)
+mean(allres_nc_mtrue15$nedges)
 
 # Organize results and export for Latex table
 res_6.1_mtrue15 <- data.frame(
