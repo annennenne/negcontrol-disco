@@ -23,14 +23,17 @@ as.cpdag <- function(amat) {
 }
 
 # Simulate CPDAG negative control
-ncCPDAG <- function(p, nedges, permute = TRUE, type = "ER") {
-  as.cpdag(ncDAG(p, nedges, permute, type))
+ncCPDAG <- function(d, nedges, permute = TRUE, type = "ER") {
+  as.cpdag(ncDAG(d, nedges, permute, type))
 }
 
 
 # Test for overall skeleton fit
 # @param conf Should be an adjacency confusion matrix as returned from
 # e.g. causalDisco::confusion()
+# @value Returns list with the following information: The observed number of 
+# true positives, the expected number of true positives under random guessing,
+# and a one-sided p-value for their difference. 
 skelfit.test <- function(conf) {
   mest <- conf$tp + conf$fp
   mtrue <- conf$tp + conf$fn
@@ -41,8 +44,10 @@ skelfit.test <- function(conf) {
               n = mmax - mtrue,
               k = mest,
               lower.tail = F)
-  list(obs_TP = conf$tp, p = p)
+  list(obs_TP = conf$tp, expected_TP = mest * mtrue / mmax, p = p)
 }
+
+
 
 
 # Negative control adjacency precision

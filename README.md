@@ -12,7 +12,7 @@ The file "R/NCtools.R" contains general tools for computing negative controls fo
  A negative control DAG (Erdős-Rényi type) over *d = 5* nodes with *mest = 7* edges is simulated like this: 
 
 ```
-source("R/NCtools.R")
+source("https://github.com/annennenne/negcontrol-disco/raw/main/R/NCtools.R")
 ncDAG(d = 5, nedges = 7)
 ```
 
@@ -26,10 +26,10 @@ ncCPDAG(d = 5, nedges = 7)
 For adjacency precision, recall, F1 score, negative predictive value (NPV) and specificity, we provide easy computation of negative control/random guessing expected values, medians and confidence intervals. For example, for an estimated graph with *d = 5* nodes, true number of edges *mtrue = 8* and estimated number of edges *mest = 7*, we find the negative control adjacency precision expectation, median and 95% confidence interval like this:
 
 ```
-nc_adj_recall(mest = 7, mtrue = 8, d = 5, level = 0.95)
+nc_adj_precision(mest = 7, mtrue = 8, d = 5, level = 0.95)
 ```
 
-Similar functions with the same syntax exist for other adjacency metrics; `nc_adj_precision()`, `nc_adj_f1()`, `nc_adj_npv()` and `nc_adj_specificity()`.
+Similar functions with the same syntax exist for other adjacency metrics; `nc_adj_recall()`, `nc_adj_f1()`, `nc_adj_npv()` and `nc_adj_specificity()`.
 
 ## Test for overall skeleton fit
 For a given adjacency confusion matrix (with TP = 6, FP = 1, FN = 2 and TN = 1), we conduct a test of overall skeleton fit as follows:
