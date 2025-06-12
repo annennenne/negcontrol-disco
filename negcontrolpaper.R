@@ -352,6 +352,7 @@ sachs_truth <- as.matrix(read.table("data/sachs.2005.truth.cpdagadj.txt",
                                     header = TRUE))
 
 # Import Tetrad results for BOSS, LiNGAM, GES and PC
+# Tetrad session can be found in "tetrad/sachs-application.tet"
 boss_res <- as.matrix(read.table("data/BOSS.amat.cpag-sachs.txt", 
                                  header = TRUE))
 lingam_res <- as.matrix(read.table("data/lingam.amat.cpag-sachs.txt", 
